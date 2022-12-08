@@ -7,7 +7,14 @@ class DataBase():
     def SelecionarTabela(self):
         sala = int(input("Existem duas salas registradas no sistema: \n"
                          "Escolha:\n[1]Sala A\n[2]Sala B\n"))
-        self.tabela = sala
+        while True:
+            if sala > 0 and sala <=2:
+                self.tabela = sala
+                break
+            else:
+                sala = int(input("Por favor escolha uma opção registrada no sistema: \n"
+                                 "Escolha:\n[1]Sala A\n[2]Sala B\n"))
+
         return self.tabela
 
     def MostrarDados(self,cursor):
